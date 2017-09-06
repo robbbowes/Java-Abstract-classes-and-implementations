@@ -1,6 +1,7 @@
 package com.example.user.cityattack;
 
 import com.example.user.cityattack.kaijuPackage.SaamonDesu;
+import com.example.user.cityattack.vehiclesPackage.TankuDesu;
 
 import org.junit.Test;
 
@@ -36,5 +37,12 @@ public class SaamonDesuTest {
         assertEquals( "Sammy", saamondesu.getName());
     }
 
+    @Test
+    public void testcanCauseDamage(){
+        SaamonDesu saamondesu = new SaamonDesu("Sammy", 300, 25);
+        TankuDesu tankudesu = new TankuDesu("Thomas", 50, 10);
+        saamondesu.attack((Damageable) tankudesu);
+        assertEquals( 25, tankudesu.getHealthValue());
+    }
 
 }

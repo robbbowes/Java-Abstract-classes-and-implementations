@@ -1,4 +1,4 @@
-package com.example.user.cityattack.kaijuPackage;
+package com.example.user.cityattack.vehiclesPackage;
 
 import com.example.user.cityattack.CanAttack;
 import com.example.user.cityattack.Damageable;
@@ -7,24 +7,23 @@ import com.example.user.cityattack.Damageable;
  * Created by user on 06/09/2017.
  */
 
-public abstract class Kaiju implements Damageable, CanAttack {
-
-    String name;
+public abstract class Vehicle implements CanAttack, Damageable{
+    String type;
     int healthValue;
     int attackValue;
 
-    public Kaiju(String name, int healthValue, int attackValue) {
-        this.name = name;
+    public Vehicle(String type, int healthValue, int attackValue){
+        this.type = type;
         this.healthValue = healthValue;
         this.attackValue = attackValue;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getHealthValue() {
@@ -35,16 +34,9 @@ public abstract class Kaiju implements Damageable, CanAttack {
         this.healthValue = healthValue;
     }
 
-    public int getAttackValue() {
-        return attackValue;
-    }
-
-    public void setAttackValue(int attackValue) {
-        this.attackValue = attackValue;
-    }
-
-    public String roar(){
-        return "Roar!!";
+    public Vehicle(String type, int healthValue){
+        this.type = type;
+        this.healthValue = healthValue;
     }
 
     public void attack(Damageable damageable){
@@ -54,5 +46,4 @@ public abstract class Kaiju implements Damageable, CanAttack {
     public void takeDamage(int attackValue){
         healthValue -= attackValue;
     }
-
 }
