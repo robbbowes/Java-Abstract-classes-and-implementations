@@ -55,4 +55,8 @@ public abstract class Kaiju implements Damageable, CanAttack {
         healthValue -= attackValue;
     }
 
+    public String move(){
+        return this.name + " moves! HELL YEAH!";
+    }
+
 }

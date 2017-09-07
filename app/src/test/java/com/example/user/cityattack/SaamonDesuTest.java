@@ -38,11 +38,16 @@ public class SaamonDesuTest {
     }
 
     @Test
-    public void testcanCauseDamage(){
+    public void testCanCauseDamage(){
         SaamonDesu saamondesu = new SaamonDesu("Sammy", 300, 25);
         TankuDesu tankudesu = new TankuDesu("Thomas", 50, 10);
         saamondesu.attack((Damageable) tankudesu);
         assertEquals( 25, tankudesu.getHealthValue());
     }
 
+    @Test
+    public void testCanMove(){
+        SaamonDesu saamondesu = new SaamonDesu("Sammy", 300, 25);
+        assertEquals( "Sammy moves! Eek!", saamondesu.move());
+    }
 }
